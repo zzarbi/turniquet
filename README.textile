@@ -83,7 +83,7 @@ h3. duration
 
 Define the duration of the animation
 
-h3 . easing
+h3. easing
 
 Define what type of animation to use. This are default jQuery animation. As today there is only "easing" and "linear".
 
@@ -94,9 +94,11 @@ Will animate slider when clicking on any slider
 h3. triggerUp
 
 Selector to use as a trigger to make the slide slide up.
-<pre>$('.turniquet').turniquet({
+<pre>
+$('.turniquet').turniquet({
     triggerUp: '.myTriggerClass'
-});</pre>
+});
+</pre>
 
 h3. triggerDown
 
@@ -109,11 +111,13 @@ Method to call after animation complete
 h3. before
 
 Method to call before animation each slide.
-<pre>$('.turniquet').turniquet({
+<pre>
+$('.turniquet').turniquet({
     before: function(index, element){
         //element is the current element
     }
-});</pre>
+});
+</pre>
 
 h3. after
 
