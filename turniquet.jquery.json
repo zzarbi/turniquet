@@ -1,0 +1,27 @@
+{
+    "name": "turniquet",
+    "title": "jQuery turniquet",
+    "description": "jQuery plugin for sliding blocks.",
+    "keywords": [
+        "slider",
+        "animation",
+        "slide"
+    ],
+    "version": "0.0.1",
+    "author": {
+        "name": "Nicolas Cerveaux",
+        "url": "https://github.com/zzarbi"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ],
+    "bugs": "https://github.com/zzarbi/turniquet/issues",
+    "homepage": "https://github.com/zzarbi/turniquet",
+    "docs": "https://github.com/zzarbi/turniquet",
+    "dependencies": {
+        "jquery": ">=1.10"
+    }
+}
