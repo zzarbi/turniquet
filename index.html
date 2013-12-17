@@ -14,6 +14,17 @@
     <![endif]-->
 
     <title>Turniquet by zzarbi</title>
+    <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-46533729-1', 'zzarbi.github.io');
+		ga('send', 'pageview');
+	</script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://raw.github.com/zzarbi/turniquet/master/jquery.turniquet.js"></script>
   </head>
 
   <body>
@@ -33,7 +44,17 @@
 
 <p>turniquet is a new type of slider for jQuery. Instead of the typical horizontal slider, this slider is following a diagonal of a div.
 Sliding can occur in both direction (Up or down).</p>
-
+<div class="container">
+    <ul class="turniquet">
+        <li><img src="http://placehold.it/350&text=Slide1" /></li>
+        <li><img src="http://placehold.it/350&text=Slide2" /></li>
+        <li><img src="http://placehold.it/350&text=Slide3" /></li>
+    </ul>
+</div>
+<script>
+$('.turniquet').turniquet();
+</script>
+<br />
 <h2>
 <a name="why-turniquet-and-not-tourniquet" class="anchor" href="#why-turniquet-and-not-tourniquet"><span class="octicon octicon-link"></span></a>Why turniquet and not tourniquet?</h2>
 

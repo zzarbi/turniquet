@@ -477,3 +477,23 @@ footer a:hover {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
+
+/* Style for turniquet */
+
+.container {
+    position: relative;
+    height: 600px;
+	border:1px dashed #777;
+}
+.turniquet {
+    position: relative;
+    margin:0;
+}
+.turniquet li {
+    position:absolute;
+    display:block;
+    width:350px;
+    height:350px;
+    list-style: none;
+}
+
