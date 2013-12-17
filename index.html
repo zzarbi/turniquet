@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Turniquet by zzarbi</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Turniquet</h1>
+        <h2>turniquet is another slider plugin for jQuery</h2>
+        <a href="https://github.com/zzarbi/turniquet" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="turniquet-plugin-for-jquery" class="anchor" href="#turniquet-plugin-for-jquery"><span class="octicon octicon-link"></span></a>Turniquet plugin for jQuery</h1>
+
+<p>turniquet is a new type of slider for jQuery. Instead of the typical horizontal slider, this slider is following a diagonal of a div.
+Sliding can occur in both direction (Up or down).</p>
+
+<h2>
+<a name="why-turniquet-and-not-tourniquet" class="anchor" href="#why-turniquet-and-not-tourniquet"><span class="octicon octicon-link"></span></a>Why turniquet and not tourniquet?</h2>
+
+<p>Tourniquet in french is not bandage. In general it's use to describe a turnstyle.</p>
+
+<p>I replaced "tourn" which almost mean "turn" in french by "turn" and got the word "turniquet". </p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use?</h2>
+
+<p>turniquet depends on jQuery (&gt;= 1.10.0). Include them both in end of your HTML code:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.turniquet.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>You must use an ordered list. And add a few line of CSS.</p>
+
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+        <span class="nc">.container</span> <span class="p">{</span>
+            <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+            <span class="k">height</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nc">.turniquet</span> <span class="p">{</span>
+            <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+            <span class="k">margin</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nc">.turniquet</span> <span class="nt">li</span> <span class="p">{</span>
+            <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+            <span class="k">display</span><span class="o">:</span><span class="k">block</span><span class="p">;</span>
+            <span class="k">width</span><span class="o">:</span><span class="m">350px</span><span class="p">;</span>
+            <span class="k">height</span><span class="o">:</span><span class="m">350px</span><span class="p">;</span>
+            <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"turniquet"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/350&amp;text=Slide1"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/350&amp;text=Slide2"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/350&amp;text=Slide3"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>then in your code do:</p>
+
+<div class="highlight highlight-html"><pre>$('.turniquet').turniquet();
+</pre></div>
+
+<p>This will activate the silder. </p>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<div class="highlight highlight-html"><pre>{
+    // These are the defaults.
+    zindex : 10000,
+    direction: 'up',
+    duration: 200,
+    easing: 'swing',
+    animateOnCLick: true,
+    triggerUp: null,
+    triggerDown: null,
+    complete: null,
+    before: null,
+    after: null
+}
+</pre></div>
+
+<h3>
+<a name="zindex" class="anchor" href="#zindex"><span class="octicon octicon-link"></span></a>zindex</h3>
+
+<p>Define what zindex the first slide should use. The next slide will use zindex-1 and so on.</p>
+
+<h3>
+<a name="direction" class="anchor" href="#direction"><span class="octicon octicon-link"></span></a>direction</h3>
+
+<p>Define the default direction.</p>
+
+<h3>
+<a name="duration" class="anchor" href="#duration"><span class="octicon octicon-link"></span></a>duration</h3>
+
+<p>Define the duration of the animation</p>
+
+<h3>
+<a name="easing" class="anchor" href="#easing"><span class="octicon octicon-link"></span></a>easing</h3>
+
+<p>Define what type of animation to use. This are default jQuery animation. As today there is only "easing" and "linear".</p>
+
+<h3>
+<a name="animateonclick" class="anchor" href="#animateonclick"><span class="octicon octicon-link"></span></a>animateOnCLick</h3>
+
+<p>Will animate slider when clicking on any slider</p>
+
+<h3>
+<a name="triggerup" class="anchor" href="#triggerup"><span class="octicon octicon-link"></span></a>triggerUp</h3>
+
+<p>Selector to use as a trigger to make the slide slide up.</p>
+
+<div class="highlight highlight-htm"><pre>$('.turniquet').turniquet({
+    triggerUp: '.myTriggerClass'
+});
+</pre></div>
+
+<h3>
+<a name="triggerdown" class="anchor" href="#triggerdown"><span class="octicon octicon-link"></span></a>triggerDown</h3>
+
+<p>Same as "triggerUp" but for the other direction</p>
+
+<h3>
+<a name="complete" class="anchor" href="#complete"><span class="octicon octicon-link"></span></a>complete</h3>
+
+<p>Method to call after animation complete</p>
+
+<h3>
+<a name="before" class="anchor" href="#before"><span class="octicon octicon-link"></span></a>before</h3>
+
+<p>Method to call before animation each slide.</p>
+
+<div class="highlight highlight-htm"><pre>$('.turniquet').turniquet({
+    before: function(index, element){
+        //element is the current element
+    }
+});
+</pre></div>
+
+<h3>
+<a name="after" class="anchor" href="#after"><span class="octicon octicon-link"></span></a>after</h3>
+
+<p>Same a "before" but for after</p>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>All code licensed under the "MIT License":<a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>. In other words you are basically free to do whatever you want. Just don't remove my name from the source.</p>
+
+<h1>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h1>
+
+<h3>
+<a name="001" class="anchor" href="#001"><span class="octicon octicon-link"></span></a>0.0.1</h3>
+
+<ul>
+<li>First version of turniquet</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/zzarbi/turniquet/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/zzarbi/turniquet/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/zzarbi/turniquet"></a> is maintained by <a href="https://github.com/zzarbi">zzarbi</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
