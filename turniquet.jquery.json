@@ -19,8 +19,8 @@
         }
     ],
     "bugs": "https://github.com/zzarbi/turniquet/issues",
-    "homepage": "https://github.com/zzarbi/turniquet",
-    "docs": "https://github.com/zzarbi/turniquet",
+    "homepage": "http://zzarbi.github.io/turniquet/",
+    "docs": "http://zzarbi.github.io/turniquet/",
     "dependencies": {
         "jquery": ">=1.10"
     }
