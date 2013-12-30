@@ -14,7 +14,9 @@
             triggerDown: null,
             complete: null,
             before: null,
-            after: null
+            after: null,
+            loop: true,
+            validate: function(){return true;}
         }, options);
         
         var windowWidth = this.parent().width(),
@@ -25,6 +27,7 @@
             childWidth = $(children[0]).width(),
             childHeight = $(children[0]).height(),
             positions = [],
+            objectMovingCounter = 0,
             animationCounter = 0;
         
         var animate = function(direction){
@@ -32,7 +35,12 @@
                 direction = settings.direction;
             }
             
-            if(animationCounter == 0){
+            // check if no animation is running and if the current slide is allow to change
+            if(objectMovingCounter == 0 && settings.validate(animationCounter)){
+            	// stop looping
+            	if(settings.loop == false && ((animationCounter+1) >= nbChild)){
+            		return false;
+            	}
                 // for each child of main collection
                 children.each(function(index, element){
                     var $c = $(element),
@@ -79,7 +87,7 @@
                         }
                     }
                     
-                    animationCounter++;
+                    objectMovingCounter++;
                     
                     // change z-index
                     if(direction == 'up'){
@@ -98,8 +106,8 @@
                         left: animLeft,
                         top: animTop
                     }, settings.duration, settings.easing, function(){
-                        if(animationCounter > 0){
-                            animationCounter --;
+                        if(objectMovingCounter > 0){
+                        	objectMovingCounter --;
                         }
                     });
 
@@ -116,6 +124,7 @@
                 if(typeof settings.complete == 'function'){
                     setTimeout(settings.complete, settings.duration);
                 }
+                animationCounter++;
             }
         };
         

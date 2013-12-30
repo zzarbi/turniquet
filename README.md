@@ -62,8 +62,9 @@ This will activate the silder.
 ```html
 {
     // These are the defaults.
-    zindex : 10000,
+    zindex : 500,
     direction: 'up',
+    reverseZindex: false,
     duration: 200,
     easing: 'swing',
     animateOnCLick: true,
@@ -71,7 +72,9 @@ This will activate the silder.
     triggerDown: null,
     complete: null,
     before: null,
-    after: null
+    after: null,
+    loop: true,
+    validate: function(){return true;}
 }
 ```
 
@@ -102,7 +105,7 @@ Will animate slider when clicking on any slider
 ### triggerUp
 
 Selector to use as a trigger to make the slide slide up.
-```htm
+```html
 $('.turniquet').turniquet({
     triggerUp: '.myTriggerClass'
 });
@@ -119,7 +122,7 @@ Method to call after animation complete
 ### before
 
 Method to call before animation each slide.
-```htm
+```html
 $('.turniquet').turniquet({
     before: function(index, element){
         //element is the current element
@@ -131,11 +134,34 @@ $('.turniquet').turniquet({
 
 Same a "before" but for after
 
+### loop
+
+Will authorize looping or not.
+
+### validate
+
+Method which will be called before each swipe.
+```html
+$('.turniquet').turniquet({
+    validate: function(index){
+        if(index == 0 // && itsValid){
+        	return true;
+        }
+        return false;
+    }
+});
+```
+
 # License
 
 All code licensed under the "MIT License":http://www.opensource.org/licenses/mit-license.php. In other words you are basically free to do whatever you want. Just don't remove my name from the source.
 
 # Changelog
+
+### 0.0.3
+
+* Added ability to disable animation's loop
+* Added ability to validate slide before swiping
 
 ### 0.0.2
 
