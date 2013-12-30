@@ -4,8 +4,9 @@
         // This is the easiest way to have default options.
         var settings = $.extend({
             // These are the defaults.
-            zindex : 10000,
+            zindex : 500,
             direction: 'up',
+            reverseZindex: false,
             duration: 200,
             easing: 'swing',
             animateOnCLick: true,
@@ -32,12 +33,10 @@
             }
             
             if(animationCounter == 0){
-                var $e = $(this);
-                
                 // for each child of main collection
                 children.each(function(index, element){
                     var $c = $(element),
-                        dataIndex = parseInt($c.attr('data-index'))
+                        dataIndex = parseInt($c.attr('data-index')),
                         newIndex = 0,
                         down = null,
                         animTop = '',
@@ -52,7 +51,7 @@
                         }
                     }else{ // down
                         newIndex = 0;
-                        down = false
+                        down = false;
                         if(dataIndex < (nbChild-1)){
                             newIndex = dataIndex+1;
                             down = true;
@@ -123,7 +122,11 @@
         // Initilize First Position
         children.each(function(index, element){
             var $e = $(element);
-            zIndexI--;
+            if(settings.reverseZindex == false){
+            	zIndexI--;
+            }else{
+            	zIndexI++;
+            }
             
             // Calculate position of each slide
             var left = (((windowWidth-(childWidth))/(nbChild-1))*index);

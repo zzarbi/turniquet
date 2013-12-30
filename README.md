@@ -77,7 +77,11 @@ This will activate the silder.
 
 ### zindex
 
-Define what zindex the first slide should use. The next slide will use zindex-1 and so on.
+Define what zindex the first slide should use.
+
+### reverseZindex
+
+Define what zindex the other slide should use +1 or -1.
 
 ### direction
 
@@ -132,6 +136,10 @@ Same a "before" but for after
 All code licensed under the "MIT License":http://www.opensource.org/licenses/mit-license.php. In other words you are basically free to do whatever you want. Just don't remove my name from the source.
 
 # Changelog
+
+### 0.0.2
+
+* Added ability to reverse zindex
 
 ### 0.0.1
 
