@@ -111,8 +111,9 @@ $('.turniquet').turniquet();
 
 <div class="highlight highlight-html"><pre>{
     // These are the defaults.
-    zindex : 10000,
+    zindex : 500,
     direction: 'up',
+    reverseZindex: false,
     duration: 200,
     easing: 'swing',
     animateOnCLick: true,
@@ -120,7 +121,9 @@ $('.turniquet').turniquet();
     triggerDown: null,
     complete: null,
     before: null,
-    after: null
+    after: null,
+    loop: true,
+    validate: function(){return true;}
 }
 </pre></div>
 
@@ -159,7 +162,7 @@ $('.turniquet').turniquet();
 
 <p>Selector to use as a trigger to make the slide slide up.</p>
 
-<div class="highlight highlight-htm"><pre>$('.turniquet').turniquet({
+<div class="highlight highlight-html"><pre>$('.turniquet').turniquet({
     triggerUp: '.myTriggerClass'
 });
 </pre></div>
@@ -179,17 +182,35 @@ $('.turniquet').turniquet();
 
 <p>Method to call before animation each slide.</p>
 
-<div class="highlight highlight-htm"><pre>$('.turniquet').turniquet({
+<div class="highlight highlight-html"><pre>$('.turniquet').turniquet({
     before: function(index, element){
         //element is the current element
     }
 });
 </pre></div>
 
-<h3>
-<a name="after" class="anchor" href="#after"><span class="octicon octicon-link"></span></a>after</h3>
+<h3><a name="after" class="anchor" href="#after"><span class="octicon octicon-link"></span></a>after</h3>
 
 <p>Same a "before" but for after</p>
+
+<h3><a name="loop" class="anchor" href="#loop"><span class="octicon octicon-link"></span></a>loop</h3>
+
+<p>Will authorize looping or not.</p>
+
+<h3>
+<a name="validate" class="anchor" href="#validate"><span class="octicon octicon-link"></span></a>validate</h3>
+
+<p>Method which will be called before each swipe.</p>
+
+<div class="highlight highlight-js"><pre>$('.turniquet').turniquet({
+    validate: function(index){
+        if(index == 0 // && itsValid){
+            return true;
+        }
+        return false;
+    }
+});
+</pre></div>
 
 <h1>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
@@ -205,7 +226,7 @@ $('.turniquet').turniquet();
 	<li>Added ability to validate slide before swiping</li>
 </ul>
 
-<h3><a name="001" class="anchor" href="#002"><span class="octicon octicon-link"></span></a>0.0.2</h3>
+<h3><a name="002" class="anchor" href="#002"><span class="octicon octicon-link"></span></a>0.0.2</h3>
 <ul>
 	<li>Added ability to reverse zindex</li>
 </ul>
